@@ -7,6 +7,7 @@
 1. Vars and Inits
 2. Init Header
 3. Init Menu
+4. About Slider
 
 
 ******************************/
@@ -23,6 +24,7 @@ $(document).ready(function()
 
 	initHeader();
 	initMenu();
+	initAboutSlider();
 
 	document.addEventListener('DOMContentLoaded', initHeader);
 
@@ -127,6 +129,55 @@ $(document).ready(function()
 				body.classList.toggle("no-scroll");
 			});
 		});
+	}
+
+	/* 
+
+	4. About Slider
+
+	*/
+
+	function initAboutSlider()
+	{
+		const slider = $('.about_slider');
+		if(!slider) return;
+
+		slider.owlCarousel(
+		{
+			items: 2,
+			loop: true,
+			margin: 24,
+			autoplay: true,
+			autoplayHoverPause: true,
+			dots: false,
+			nav: false,
+			responsive:
+			{
+				0:
+				{
+					margin: 16
+				},
+				575:
+				{
+					margin: 24
+				}
+			}
+		});
+
+		// Handle video
+		$('.about_slide').hover(function()
+		{
+			const video = $(this).find('.slide-video').get(0);
+			video.currentTime = 0;
+			video.play();
+		},
+		function()
+		{
+			const video = $(this).find('.slide-video').get(0);
+			video.pause();
+			video.currentTime = 0;
+		});
+
 	}
 
 });
