@@ -81,7 +81,14 @@
 
 @media only screen and (max-width: 1024px)
 {
-	
+	.about_title
+    {
+        font-size: 72px;
+    }
+    .header_social_container
+    {
+        display: none;
+    }
 }
 
 /************
@@ -90,7 +97,12 @@
 
 @media only screen and (max-width: 991px)
 {
-	
+	.hero_content
+    {
+        max-width: 100%;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
 }
 
 /************
@@ -117,7 +129,54 @@
 
 @media only screen and (max-width: 768px)
 {
-	
+    .header_inner
+    {
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .header-logo img
+    {
+        width: 52px;
+        height: 57px;
+    }
+    .header-logo span
+    {
+        font-size: 26px;
+    }
+    .menu_header_inner
+    {
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .menu_nav ul li a
+    {
+        font-size: 72px;
+    }
+    .hamburger_container
+    {
+        width: 66px;
+        height: 46px;
+    }
+    .hamburger > span
+    {
+        height: 3px;
+    }
+	.about_title
+    {
+        font-size: 52px;
+    }
+    .hero_content h1
+    {
+        font-size: 64px;
+    }
+    .hero_content h1 span
+    {
+        font-size: 52px;
+    }
 }
 
 /************
@@ -135,7 +194,71 @@
 
 @media only screen and (max-width: 575px)
 {
-	
+    p
+    {
+        font-size: 20px;
+    }
+    .header_inner
+    {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .header-logo img
+    {
+        width: 44px;
+        height: 48px;
+    }
+    .header-logo span
+    {
+        margin-left: 4px;
+    }
+    .menu_header_inner
+    {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .menu_nav ul li:not(:last-child)
+    {
+        margin-bottom: 20px;
+    }
+    .menu_nav ul li a
+    {
+        font-size: 52px;
+    }
+    .about
+    {
+        padding-top: 96px;
+    }
+    .about_content
+    {
+        padding-bottom: 92px;
+    }
+	.about_title
+    {
+        font-size: 40px;
+    }
+    .about_text
+    {
+        margin-top: 30px;
+    }
+    .button
+    {
+        height: 64px;
+        padding-left: 33px;
+        padding-right: 33px;
+        border-radius: 16px;
+        font-size: 24px;
+        line-height: 67px;
+        margin-top: 31px;
+    }
+    .hero_content h1
+    {
+        font-size: 48px;
+    }
+    .hero_content h1 span
+    {
+        font-size: 40px;
+    }
 }
 
 /************

@@ -47,6 +47,10 @@ body
 	background: var(--white);
 	color: var(--textColor);
 }
+body.no-scroll
+{
+    overflow: hidden;
+}
 div
 {
 	display: block;
@@ -64,7 +68,7 @@ ul
 p
 {
 	font-family: var(--font1);
-	font-size: 16px;
+	font-size: 24px;
 	line-height: 1.5;
 	font-weight: 400;
 	color: var(--textColor);
@@ -136,7 +140,7 @@ h1, h2, h3, h4, h5, h6
 	-webkit-font-smoothing: antialiased;
 	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
 	text-shadow: rgba(0,0,0,.01) 0 0 1px;
-	line-height: 1.2;
+	line-height: 1.1;
 	margin-bottom: 0;
 	color: var(--hColor);
 }
@@ -288,6 +292,33 @@ section
 	border: 0;
 	white-space: nowrap;
 }
+.light-theme
+{
+	background-color: #ffffff;
+}
+.dark-theme
+{
+	background-color: #000000;
+}
+.button
+{
+	display: inline-block;
+	height: 72px;
+	background-color: #00FF26;
+	padding-left: 33px;
+	padding-right: 33px;
+	border-radius: 20px;
+	font-size: 32px;
+	font-weight: 400;
+	color: #000000;
+	line-height: 75px;
+	margin-top: 31px;
+}
+.button:hover
+{
+	background-color: #000000;
+	color: #ffffff;
+}
 
 /*********************************
 3. Menu
@@ -298,6 +329,108 @@ section
 	position: fixed;
 	top: 0;
 	right: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: #00FF26;
+	pointer-events: none;
+	opacity: 0;
+	z-index: 1001;
+	overflow-y: auto;
+    overflow-x: hidden;
+}
+.menu.active
+{
+	pointer-events: all;
+	opacity: 1;
+}
+.menu_inner
+{
+	width: 100%;
+	height: 100%;
+}
+.menu_header_inner
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding-left: 64px;
+	padding-right: 64px;
+	padding-top: 52px;
+	padding-bottom: 52px;
+}
+.menu .header-logo span
+{
+	mix-blend-mode: unset;
+}
+.menu .header-logo a img
+{
+	mix-blend-mode: unset;
+}
+.close
+{
+	width: 64px;
+	height: 64px;
+	padding: 10px;
+	background-color: transparent;
+	outline: none;
+	border: none;
+	transform: rotate(45deg);
+}
+.close > span
+{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.close > span span
+{
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	width: 100%;
+	height: 4px;
+	background-color: #ffffff;
+}
+.close > span span:last-child
+{
+	transform-origin: 50% 50%;
+	transform: translateY(-50%) rotate(-90deg);
+}
+/* .close:hover > span span
+{
+	background-color: #000000;
+} */
+.menu_header_inner
+{
+	z-index: 1;
+}
+.menu_nav
+{
+	width: 100%;
+	padding-top: 251px;
+}
+.menu_nav ul li a
+{
+	font-size: 84px;
+	font-weight: 700;
+	letter-spacing: 0.006em;
+	color: #000000;
+	line-height: 1.1;
+}
+.menu_nav ul li a:hover
+{
+	color: #ffffff;
+}
+.menu_nav ul li:not(:last-child)
+{
+	margin-bottom: 30px;
 }
 
 /*********************************
@@ -311,6 +444,11 @@ section
 	left: 0;
 	width: 100%;
 	z-index: 1000;
+}
+.header-logo img
+{
+	width: 77px;
+	height: 84px;
 }
 .header.light .header-logo img
 {
@@ -332,8 +470,8 @@ section
 {
 	padding-left: 64px;
 	padding-right: 64px;
-	padding-top: 52px;
-	padding-bottom: 52px;
+	padding-top: 46px;
+	padding-bottom: 46px;
 }
 .header-logo a img
 {
@@ -356,10 +494,15 @@ section
 }
 .hamburger
 {
+	display: block;
+	position: relative;
 	width: 100%;
 	height: 100%;
+	background-color: transparent;
+	border: none;
+	outline: none;
 }
-.hamburger > div
+.hamburger > span
 {
 	display: block;
 	position: absolute;
@@ -368,19 +511,19 @@ section
 	height: 4px;
 	mix-blend-mode: difference;
 }
-.header.light .hamburger > div
+.header.light .hamburger > span
 {
 	background-color: black;
 }
-.header.dark .hamburger > div
+.header.dark .hamburger > span
 {
 	background-color: white;
 }
-.hamburger > div:first-child
+.hamburger > span:first-child
 {
 	top: 0;
 }
-.hamburger > div:nth-child(2)
+.hamburger > span:nth-child(2)
 {
 	top: 50%;
 	-webkit-transform: translateY(-50%);
@@ -389,10 +532,18 @@ section
 	-o-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
-.hamburger > div:last-child
+.hamburger > span:last-child
 {
 	bottom: 0;
 }
+/* .header.light .hamburger_container:hover .hamburger > span
+{
+	background-color: #ffffff;
+}
+.header.dark .hamburger_container:hover .hamburger > span
+{
+	background-color: #000000;
+} */
 .header_social
 {
 	gap: 12px;
@@ -417,7 +568,7 @@ section
 {
 	font-size: 20px;
 	line-height: 34px;
-	color: black;
+	color: #000000;
 }
 
 /*********************************
@@ -441,12 +592,16 @@ section
 }
 .hero_content
 {
+	text-align: center;
 	max-width: 800px;
 }
 .hero_content h1
 {
 	font-size: 84px;
+	font-weight: 700;
 	color: #ffffff;
+	line-height: 1.1;
+	letter-spacing: 0.006em;
 }
 .hero_content h1 span
 {
@@ -456,3 +611,82 @@ section
 {
 	color: #00FF26;
 }
+
+/*********************************
+6. About
+*********************************/
+.about
+{
+	padding-top: 116px;
+}
+.about_title
+{
+	font-size: 84px;
+	font-weight: 700;
+	color: #000000;
+}
+.about_content
+{
+	padding-bottom: 109px;
+}
+.about_text
+{
+	margin-top: 34px;
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*********************************
+7. Why Choose Us
+*********************************/
+.why_choose
+{
+	height: 1300px;
+}
+/*********************************
+8. Services
+*********************************/
+.services
+{
+	height: 1300px;
+}
+/*********************************
+9. Work
+*********************************/
+.work
+{
+	height: 1300px;
+}
+/*********************************
+10. FAQ
+*********************************/
+.faq
+{
+	height: 1300px;
+}
+/*********************************
+11. Connect
+*********************************/
+.connect
+{
+	height: 1300px;
+}
+/*********************************
+6. About
+*********************************/
+/*********************************
+6. About
+*********************************/
+/*********************************
+6. About
+*********************************/
+/*********************************
+6. About
+*********************************/
+/*********************************
+6. About
+*********************************/
+/*********************************
+6. About
+*********************************/
