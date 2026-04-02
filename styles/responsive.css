@@ -54,7 +54,10 @@
 
 @media only screen and (max-width: 1280px)
 {
-	
+	.about_slide
+    {
+        /* height: 390px; */
+    }
 }
 
 /************
@@ -63,7 +66,14 @@
 
 @media only screen and (max-width: 1199px)
 {
-	
+	.why_choose_us h2
+    {
+        max-width: 100%;
+    }
+    .service
+    {
+        width: 100%;
+    }
 }
 
 /************
@@ -81,6 +91,10 @@
 
 @media only screen and (max-width: 1024px)
 {
+    h2
+    {
+        font-size: 44px;
+    }
 	.about_title
     {
         font-size: 72px;
@@ -88,6 +102,16 @@
     .header_social_container
     {
         display: none;
+    }
+    .services
+    {
+        padding-top: 170px;
+        padding-bottom: 170px;
+    }
+    .services h3,
+    .services p
+    {
+        font-size: 24px;
     }
 }
 
@@ -129,6 +153,10 @@
 
 @media only screen and (max-width: 768px)
 {
+    h2
+    {
+        font-size: 44px;
+    }
     .header_inner
     {
         padding-left: 24px;
@@ -177,6 +205,24 @@
     {
         font-size: 52px;
     }
+    .about_slider_container
+    {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .why_choose_us
+    {
+        padding-top: 116px;
+        padding-bottom: 116px;
+    }
+    .callout-statement-row
+    {
+        margin-top: 58px;
+    }
+    .what_makes_us_different_row
+    {
+        padding-top: 116px;
+    }
 }
 
 /************
@@ -194,6 +240,10 @@
 
 @media only screen and (max-width: 575px)
 {
+    h2
+    {
+        font-size: 32px;
+    }
     p
     {
         font-size: 20px;
@@ -258,6 +308,32 @@
     .hero_content h1 span
     {
         font-size: 40px;
+    }
+    .why_choose_us
+    {
+        padding-top: 130px;
+        padding-bottom: 130px;
+    }
+    .why_choose_us h2
+    {
+        margin-bottom: 16px;
+    }
+    .what_makes_us_different_row
+    {
+        padding-top: 114px;
+    }
+    .callout-statement-row
+    {
+        margin-top: 60px;
+    }
+    .services_reel_container
+    {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .services h3, .services p
+    {
+        font-size: 20px;
     }
 }
 

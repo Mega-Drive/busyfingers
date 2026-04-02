@@ -8,6 +8,7 @@
 2. Init Header
 3. Init Menu
 4. About Slider
+5. Services Reel
 
 
 ******************************/
@@ -25,6 +26,7 @@ $(document).ready(function()
 	initHeader();
 	initMenu();
 	initAboutSlider();
+	initServicesReel();
 
 	document.addEventListener('DOMContentLoaded', initHeader);
 
@@ -155,29 +157,80 @@ $(document).ready(function()
 			{
 				0:
 				{
+					items: 1,
 					margin: 16
 				},
-				575:
+				576:
 				{
+					items: 1,
+					margin: 16
+				},
+				768:
+				{
+					items: 2,
+					margin: 16
+				},
+				769:
+				{
+					items: 2,
 					margin: 24
 				}
 			}
 		});
 
-		// Handle video
-		$('.about_slide').hover(function()
+		$('.about_slider').on('mouseenter', '.about_slide', function()
 		{
 			const video = $(this).find('.slide-video').get(0);
 			video.currentTime = 0;
 			video.play();
-		},
-		function()
+		}).on('mouseleave', '.about_slide', function()
 		{
 			const video = $(this).find('.slide-video').get(0);
 			video.pause();
 			video.currentTime = 0;
 		});
+	}
 
+	/* 
+
+	5. Services Reel
+
+	*/
+
+	function initServicesReel()
+	{
+		const video = $('.services-video').get(0);
+		const vid = $('.services-video');
+		const btn = $('.services_reel_play_button');
+		
+		btn.on("click", () =>
+		{
+			if(video.paused)
+			{
+				video.classList.toggle("active");
+				video.play();
+			}
+			else
+			{
+				video.classList.toggle("active");
+				video.pause();
+			}
+			
+		});
+
+		vid.on("click", () =>
+		{
+			if(video.paused)
+			{
+				video.classList.toggle("active");
+				video.play();
+			}
+			else
+			{
+				video.classList.toggle("active");
+				video.pause();
+			}
+		});
 	}
 
 });
