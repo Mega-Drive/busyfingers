@@ -638,7 +638,7 @@ section
 .about_slide
 {
 	overflow: hidden;
-	aspect-ratio: 903 / 510;
+	aspect-ratio: 1920 / 1088;
 }
 .about_slide img
 {
@@ -652,13 +652,18 @@ section
 .slide-video
 {
 	display: none;
-	width: 100%;
-	height: 100%;
+	width: 101%;
+	height: 101%;
 	object-fit: cover;
 	object-position: center;
 	background-color: transparent;
 	outline: none !important;
 	border: none !important;
+	-webkit-transform: translateX(-4px);
+	-moz-transform: translateX(-4px);
+	-ms-transform: translateX(-4px);
+	-o-transform: translateX(-4px);
+	transform: translateX(-4px);
 }
 video:focus
 {
