@@ -149,7 +149,7 @@ $(document).ready(function()
 			items: 2,
 			loop: true,
 			margin: 24,
-			autoplay: true,
+			autoplay: false,
 			autoplayHoverPause: true,
 			dots: false,
 			nav: false,
