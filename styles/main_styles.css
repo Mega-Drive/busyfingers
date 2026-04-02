@@ -767,6 +767,7 @@ video:focus
 	width: 100%;
 	height: auto;
 	aspect-ratio: 1920/1088;
+	overflow: hidden;
 }
 .services_reel_logo
 {
